@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 import os
 
+current_dir = os.getcwd()
+file_path = os.path.join(current_dir, "ID", "인천ID.xlsx")
+
+st.write(f"현재 작업 디렉토리: {current_dir}")
+st.write(f"엑셀 파일 경로: {file_path}")
+st.write(f"파일 존재 여부: {os.path.exists(file_path)}")
 
 # 데이터 불러오기
 @st.cache_data
