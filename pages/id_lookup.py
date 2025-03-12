@@ -8,7 +8,7 @@ import os
 def load_data():
     # 현재 `id_lookup.py` 파일이 있는 폴더의 상위 폴더(`TOTAL_APP/`)를 기준으로 경로 설정
     base_dir = os.path.dirname(os.path.abspath(__file__))  # 현재 파일 위치
-    file_path = os.path.abspath(os.path.join(base_dir, "..", "ID", "인천ID.xlsx"))  # 절대 경로 사용
+    file_path = os.path.join(base_dir, "..", "ID", "인천ID.xlsx")  # 절대 경로 사용
 
     # 파일이 존재하는지 확인
     if not os.path.exists(file_path):
@@ -22,7 +22,7 @@ def load_data():
     return id_list_df, grade_df
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.abspath(os.path.join(base_dir, "..", "ID", "인천ID.xlsx"))
+file_path = os.path.join(base_dir, "..", "ID", "인천ID.xlsx") 
 st.write("엑셀 파일 경로:", file_path)
 st.write("파일 존재 여부:", os.path.exists(file_path))
 id_list_df, grade_df = load_data()
